@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Accordion from "./Components/Accordion/Accordion";
+import Rating from "./Components/Rating/Rating";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    console.log("App rendered")
+
+    let [collapsed, setCollapsed] = useState(false)
+
+    const changeCollapse = (onOf: boolean) => {
+        setCollapsed(onOf)
+    }
+
+    return (
+        <div>
+            <PageTitle title={"This is App component"}/>
+            <PageTitle title={"My Friends"}/>
+            Article 1
+            <Rating value={4}/>
+            <Accordion titleValue={"Menu"} collapsed={collapsed} changeCollapse={changeCollapse}/>
+            <Accordion titleValue={"Users"} collapsed={collapsed} changeCollapse={changeCollapse}/>
+            Article 2
+            {/*<Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>*/}
+            <Rating value={5}/>
+        </div>
+    );
+}
+
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
+    console.log("PageTitle rendered")
+    return (
+        <h1>
+            {props.title}
+        </h1>
+    );
 }
 
 export default App;
