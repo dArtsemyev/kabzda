@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
 import Rating from "./Components/Rating/Rating";
@@ -6,20 +6,14 @@ import Rating from "./Components/Rating/Rating";
 function App() {
     console.log("App rendered")
 
-    let [collapsed, setCollapsed] = useState(false)
-
-    const changeCollapse = (onOf: boolean) => {
-        setCollapsed(onOf)
-    }
-
     return (
         <div>
             <PageTitle title={"This is App component"}/>
             <PageTitle title={"My Friends"}/>
             Article 1
             <Rating value={4}/>
-            <Accordion titleValue={"Menu"} collapsed={collapsed} changeCollapse={changeCollapse}/>
-            <Accordion titleValue={"Users"} collapsed={collapsed} changeCollapse={changeCollapse}/>
+            <Accordion titleValue={"Menu"} collapsed={true} />
+            <Accordion titleValue={"Users"} collapsed={false} />
             Article 2
             {/*<Rating value={0}/>
             <Rating value={1}/>

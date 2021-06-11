@@ -4,7 +4,6 @@ import OnOf from "../OnOf/OnOf";
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
-    changeCollapse: (onOf: boolean) => void
 }
 
 function Accordion(props: AccordionPropsType) {
@@ -13,7 +12,7 @@ function Accordion(props: AccordionPropsType) {
         return (
             <div>
                 <AccordionTitle title={props.titleValue}/>
-                <OnOf isOn={props.collapsed} changeCollapse={props.changeCollapse}/>
+                <OnOf isOn={props.collapsed} />
                 { !props.collapsed && <AccordionBody/>}
             </div>
         );

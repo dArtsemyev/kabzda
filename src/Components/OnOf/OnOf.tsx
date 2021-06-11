@@ -3,14 +3,18 @@ import s from "./OnOf.module.css"
 
 type OnOfPropsType = {
     isOn: boolean
-    changeCollapse: (onOf: boolean) => void
 }
 
 function OnOf(props: OnOfPropsType){
+
+    const borderButton = {
+        border: "1px solid black",
+    }
+
     return (
         <div className={s.onOf}>
-            <div onClick={() => {props.changeCollapse(false)}} className={s.button + " " + s.buttonOn}>On</div>
-            <div onClick={() => {props.changeCollapse(true)}} className={s.button + " " + s.buttonOff}>Off</div>
+            <div onClick={() => {}} className={s.button + " " + s.buttonOn} style={borderButton}>On</div>
+            <div onClick={() => {}} className={s.button + " " + s.buttonOff} style={borderButton}>Off</div>
             <div className={props.isOn ? s.indicator : s.active}></div>
         </div>
     );
