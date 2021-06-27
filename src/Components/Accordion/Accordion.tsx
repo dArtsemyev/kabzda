@@ -1,25 +1,20 @@
-import React, {useState} from "react";
+import React from "react";
 import OnOf from "../OnOf/OnOf";
 
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
+    changeCollapsed: (isOff: boolean) => void
 }
 
 function Accordion(props: AccordionPropsType) {
     console.log("Accordion rendered")
 
-    let [collapsed, setCollapsed] = useState(props.collapsed)
-
-    const changeCollapsed = (isOff: boolean) => {
-        setCollapsed(isOff)
-    }
-
         return (
             <div>
-                <OnOf isOn={collapsed} changeCollapsed={changeCollapsed}/>
-                <AccordionTitle title={props.titleValue} onClick={() => setCollapsed(!collapsed)}/>
-                { !collapsed && <AccordionBody/>}
+                <OnOf isOn={props.collapsed} changeCollapsed={props.changeCollapsed}/>
+                <AccordionTitle title={props.titleValue} onClick={() => props.changeCollapsed(!props.collapsed)}/>
+                { !props.collapsed && <AccordionBody/>}
             </div>
         );
 

@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import s from "./UncontrolledRating.module.css"
+import {RatingValueType} from "../../App";
 
 type RatingPropsType = {
 }
@@ -22,8 +23,8 @@ function UncontrolledRating(props: RatingPropsType) {
 
 type StarPropsType = {
     selected: boolean
-    value: 1 | 2 | 3 | 4 | 5
-    setValue: (value: 1 | 2 | 3 | 4 | 5) => void
+    value: RatingValueType
+    setValue: (value: RatingValueType) => void
 }
 
 function Star(props: StarPropsType) {
