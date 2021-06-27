@@ -11,11 +11,13 @@ function App() {
         <div className="App">
             <PageTitle title={"This is App component"}/>
             <PageTitle title={"My Friends"}/>
-            Uncontrolled Rating
-            <UncontrolledRating />
+
+            <h2>Uncontrolled Rating</h2>
             <Accordion titleValue={"Menu"} collapsed={true} />
+            <UncontrolledRating />
+
+            <h2>Controlled Rating</h2>
             <Accordion titleValue={"Users"} collapsed={false} />
-            Controlled Rating
             {/*<Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
