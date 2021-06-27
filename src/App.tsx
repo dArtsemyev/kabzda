@@ -2,19 +2,20 @@ import React from 'react';
 import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
 import Rating from "./Components/Rating/Rating";
+import UncontrolledRating from "./Components/UncontrolledRating/UncontrolledRating";
 
 function App() {
     console.log("App rendered")
 
     return (
-        <div>
+        <div className="App">
             <PageTitle title={"This is App component"}/>
             <PageTitle title={"My Friends"}/>
-            Article 1
-            <Rating value={4}/>
+            Uncontrolled Rating
+            <UncontrolledRating />
             <Accordion titleValue={"Menu"} collapsed={true} />
             <Accordion titleValue={"Users"} collapsed={false} />
-            Article 2
+            Controlled Rating
             {/*<Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
