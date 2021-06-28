@@ -9,12 +9,7 @@ export type RatingValueType =  0 | 1 | 2 | 3 | 4 | 5
 function App() {
     console.log("App rendered")
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(1)
-    let [collapsed, setCollapsed] = useState(true)
-
-    const changeCollapsed = (isOff: boolean) => {
-        setCollapsed(isOff)
-    }
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
 
     return (
         <div className="App">
@@ -22,11 +17,16 @@ function App() {
             <PageTitle title={"My Friends"}/>
 
             <h2>Uncontrolled Rating</h2>
-            <Accordion titleValue={"Menu"} collapsed={collapsed} changeCollapsed={changeCollapsed}/>
+
+            <Accordion titleValue={"Menu"}
+                       collapsed={true}
+            />
             <UncontrolledRating />
 
             <h2>Controlled Rating</h2>
-            <Accordion titleValue={"Users"} collapsed={collapsed} changeCollapsed={changeCollapsed}/>
+            <Accordion titleValue={"Users"}
+                       collapsed={true}
+            />
             {/*<Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
